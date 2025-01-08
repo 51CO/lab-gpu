@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#SBATCH -p hpc-bio-pacioli
+#SBATCH --chdir=/home/alumno05/lab-gpu
+#SBATCH -J advanced
+#SBATCH --cpus-per-task=4
+#SBATCH --ntasks=4
+#SBATCH --mail-type=NONE    #END/START/NONE
+#SBATCH --mail-user=MAIL@um.es
+
+module load anaconda/2023.03
+
+time ipython reduc-operation-array_par-alumno05.ipynb 50000000 
+
+module unload anaconda/2023.03
+
